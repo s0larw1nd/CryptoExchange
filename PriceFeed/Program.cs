@@ -34,5 +34,14 @@ builder.Services.AddSingleton<PricesService>();
 builder.Services.AddHostedService<ExampleConnector>();
 builder.Services.AddHostedService<KafkaConsumerService>();
 
+builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.MapControllers();
+
 app.Run();

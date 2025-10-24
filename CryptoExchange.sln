@@ -3,11 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BE3EF7D6-E955-4B3F-8A32-EE368819809B}"
 	ProjectSection(SolutionItems) = preProject
 		compose.yaml = compose.yaml
+		nginx.conf = nginx.conf
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceFeed", "PriceFeed\PriceFeed.csproj", "{FA4AD5CD-A4A3-49C0-B71E-49FE42411AE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{CAC54B9F-C241-46F4-962E-F1A43AE4CE9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuth", "UserAuth\UserAuth.csproj", "{D295813D-E93D-4DE3-ABDE-B393A7BB8099}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,5 +26,9 @@ Global
 		{CAC54B9F-C241-46F4-962E-F1A43AE4CE9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAC54B9F-C241-46F4-962E-F1A43AE4CE9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAC54B9F-C241-46F4-962E-F1A43AE4CE9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D295813D-E93D-4DE3-ABDE-B393A7BB8099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D295813D-E93D-4DE3-ABDE-B393A7BB8099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D295813D-E93D-4DE3-ABDE-B393A7BB8099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D295813D-E93D-4DE3-ABDE-B393A7BB8099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

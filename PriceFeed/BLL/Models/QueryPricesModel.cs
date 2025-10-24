@@ -2,7 +2,7 @@
 
 public class QueryPricesModel
 {
-    public long[] Ids { get; set; }
+    public long[]? Ids { get; set; }
 
     public string[] Pairs { get; set; }
 

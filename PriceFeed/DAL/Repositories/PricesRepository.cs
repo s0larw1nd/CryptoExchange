@@ -72,6 +72,8 @@ public class PricesRepository(UnitOfWork unitOfWork) : IPricesRepository
         {
             sql.Append(" where " + string.Join(" and ", conditions));
         }
+        
+        sql.Append(" ORDER BY time DESC");
 
         if (model.Limit > 0)
         {
