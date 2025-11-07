@@ -1,5 +1,5 @@
 ﻿services:
-  postgres:
+  postgres-prices:
     image: postgres
     environment:
       - POSTGRES_USER=user
@@ -14,9 +14,9 @@
   pgbouncer:
     image: edoburu/pgbouncer:latest
     depends_on:
-      - postgres
+      - postgres-prices
     environment:
-      - DB_HOST=postgres
+      - DB_HOST=postgres-prices
       - DB_PORT=5432
       - DB_USER=user
       - DB_PASSWORD=mypassword
@@ -47,7 +47,7 @@
       - DB_PASSWORD=mypassword
       - ADMIN_USERS=postgres,admin
     ports:
-      - "16432:16432"
+      - "16432:5432"
         
   redis:
     image: redis:latest

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iotnUTa7O3c=",
+  "dgSpecHash": "WB5oglbbiN8=",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\RiderProjects\\CryptoExchange\\UserAuth\\UserAuth.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,9 @@
     "C:\\Users\\user\\.nuget\\packages\\fluentmigrator.runner.snowflake\\7.1.0\\fluentmigrator.runner.snowflake.7.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluentmigrator.runner.sqlite\\7.1.0\\fluentmigrator.runner.sqlite.7.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluentmigrator.runner.sqlserver\\7.1.0\\fluentmigrator.runner.sqlserver.7.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\12.1.0\\fluentvalidation.12.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.bcl.cryptography\\9.0.0\\microsoft.bcl.cryptography.9.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.data.sqlclient\\6.0.1\\microsoft.data.sqlclient.6.0.1.nupkg.sha512",

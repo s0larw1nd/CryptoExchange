@@ -10,3 +10,4 @@ C:\Users\user\RiderProjects\CryptoExchange\Common\obj\Debug\net9.0\Common.dll
 C:\Users\user\RiderProjects\CryptoExchange\Common\obj\Debug\net9.0\refint\Common.dll
 C:\Users\user\RiderProjects\CryptoExchange\Common\obj\Debug\net9.0\Common.pdb
 C:\Users\user\RiderProjects\CryptoExchange\Common\obj\Debug\net9.0\ref\Common.dll
+C:\Users\user\RiderProjects\CryptoExchange\Common\obj\Debug\net9.0\Common.sourcelink.json

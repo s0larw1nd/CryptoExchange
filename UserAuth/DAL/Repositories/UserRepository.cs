@@ -6,7 +6,7 @@ namespace UserAuth.DAL.Repositories;
 
 public class UserRepository(UnitOfWork unitOfWork) : IUserRepository
 {
-    public async Task<UserDal[]> Insert(UserDal model, CancellationToken token)
+    public async Task<UserDal[]> Insert(UserDal[] model, CancellationToken token)
     {
         var sql = @"
            INSERT INTO users
@@ -26,7 +26,7 @@ public class UserRepository(UnitOfWork unitOfWork) : IUserRepository
                 password
         ";
         
-        var conn = await unitOfWork.GetConnection(token);
+        var conn = await unitOfWork.GetConnectionPostgreSql(token);
         var res = await conn.QueryAsync<UserDal>(new CommandDefinition(
             sql, new {User = model}, cancellationToken: token));
         
@@ -35,18 +35,27 @@ public class UserRepository(UnitOfWork unitOfWork) : IUserRepository
 
     public async Task<UserDal[]> Query(QueryUserDalModel model, CancellationToken token)
     {
-        var sql = @$"
-            select 
+        var sql = @"
+            SELECT 
+                id,
                 username, 
                 password
-            from users
-            
-            WHERE username = {model.Username} AND password = {model.Password}
+            FROM users
+            WHERE username = @Username
         ";
+
+        if (model.Password != null)
+        {
+            sql += " AND password = @Password";
+        }
         
-        var conn = await unitOfWork.GetConnection(token);
-        var res = await conn.QueryAsync<UserDal>(new CommandDefinition(
-            sql, cancellationToken: token));
+        var conn = await unitOfWork.GetConnectionPostgreSql(token);
+        var res = await conn.QueryAsync<UserDal>(
+            new CommandDefinition(
+                sql,
+                new { model.Username, model.Password },
+                cancellationToken: token
+            ));
         
         return res.ToArray();
     }

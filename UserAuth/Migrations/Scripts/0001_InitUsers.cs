@@ -9,7 +9,7 @@ public class InitUsers: Migration
         var sql = @"    
         CREATE TABLE IF NOT EXISTS users (
             id bigserial not null primary key,
-            username varchar not null,
+            username varchar not null unique,
             password varchar not null
         );
 

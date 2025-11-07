@@ -1,4 +1,7 @@
-﻿using UserAuth.BLL.Models;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Npgsql;
+using UserAuth.BLL.Models;
 using UserAuth.DAL;
 using UserAuth.DAL.Interfaces;
 using UserAuth.Models;
@@ -7,22 +10,22 @@ namespace UserAuth.BLL.Services;
 
 public class UserService(UnitOfWork unitOfWork, IUserRepository userRepository)
 {
-    public async Task<UserUnit[]> Insert(UserUnit userUnit, CancellationToken token)
+    public async Task<UserUnit[]> Insert(UserUnit[] userUnits, CancellationToken token)
     {
         await using var transaction = await unitOfWork.BeginTransactionAsync(token);
         
         try
         {
-            UserDal userDal = new UserDal
+            UserDal[] userDals = userUnits.Select(u => new UserDal
             {
-                Id = userUnit.Id,
-                Username = userUnit.Username,
-                Password = userUnit.Password
-            };
-            var prices = await userRepository.Insert(userDal, token);
+                Id=u.Id,
+                Username=u.Username,
+                Password=u.Password,
+            }).ToArray();
             
+            var users = await userRepository.Insert(userDals, token);
             await transaction.CommitAsync(token);
-            return Map(prices);
+            return Map(users);
         }
         catch (Exception e) 
         {
@@ -39,7 +42,7 @@ public class UserService(UnitOfWork unitOfWork, IUserRepository userRepository)
             Password = model.Password
         }, token);
 
-        if (users.Length is 0)
+        if (users.Length == 0)
         {
             return [];
         }

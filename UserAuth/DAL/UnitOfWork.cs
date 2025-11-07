@@ -1,38 +1,57 @@
 ﻿using System.Data;
 using Microsoft.Extensions.Options;
 using Npgsql;
+using StackExchange.Redis;
+using UserAuth.Models;
 
 namespace UserAuth.DAL;
 
 public class UnitOfWork(IOptions<DbSettings> dbSettings): IDisposable
 {
-    private NpgsqlConnection _connection;
+    private NpgsqlConnection _connectionPostgres;
+    private ConnectionMultiplexer _redis;
+    private IDatabase _db;
     
-    public async Task<NpgsqlConnection> GetConnection(CancellationToken token)
+    public async Task<NpgsqlConnection> GetConnectionPostgreSql(CancellationToken token)
     {
-        if (_connection is not null)
+        if (_connectionPostgres is not null)
         {
-            return _connection;
+            return _connectionPostgres;
         }
         
         var dataSource = new NpgsqlDataSourceBuilder(dbSettings.Value.ConnectionString);
+        
+        dataSource.MapComposite<UserDal>("v1_users");
        
-        _connection = dataSource.Build().CreateConnection();
-        _connection.StateChange += (sender, args) =>
+        _connectionPostgres = dataSource.Build().CreateConnection();
+        _connectionPostgres.StateChange += (sender, args) =>
         {
             if (args.CurrentState == ConnectionState.Closed)
-                _connection = null;
+                _connectionPostgres = null;
         };
         
-        await _connection.OpenAsync(token);
+        await _connectionPostgres.OpenAsync(token);
 
-        return _connection;
+        return _connectionPostgres;
+    }
+
+    public async Task<IDatabase> GetConnectionRedis()
+    {
+        if (_db is not null)
+        {
+            return _db;
+        }
+        
+        _redis = ConnectionMultiplexer.Connect(dbSettings.Value.ConnectionStringRedis);
+        _db = _redis.GetDatabase();
+        
+        return _db;
     }
 
     public async ValueTask<NpgsqlTransaction> BeginTransactionAsync(CancellationToken token)
     {
-        _connection ??= await GetConnection(token);
-        return await _connection.BeginTransactionAsync(token);
+        _connectionPostgres ??= await GetConnectionPostgreSql(token);
+        return await _connectionPostgres.BeginTransactionAsync(token);
     }
 
     public void Dispose()
@@ -48,7 +67,11 @@ public class UnitOfWork(IOptions<DbSettings> dbSettings): IDisposable
     
     private void DisposeConnection()
     {
-        _connection?.Dispose();
-        _connection = null;
+        _connectionPostgres?.Dispose();
+        _connectionPostgres = null;
+        
+        _db = null;
+        _redis?.Dispose();
+        _redis = null;
     }
 }

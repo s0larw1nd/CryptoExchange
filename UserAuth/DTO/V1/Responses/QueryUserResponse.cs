@@ -4,5 +4,5 @@ namespace UserAuth.DTO.V1.Responses;
 
 public class QueryUserResponse
 {
-    public UserUnit User { get; set; }
+    public string Token { get; set; }
 }
