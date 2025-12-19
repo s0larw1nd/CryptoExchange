@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuth", "UserAuth\UserAuth.csproj", "{D295813D-E93D-4DE3-ABDE-B393A7BB8099}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletService", "WalletService\WalletService.csproj", "{7C23FF52-2B41-4CAE-9CF4-F4E724FAF4F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{D295813D-E93D-4DE3-ABDE-B393A7BB8099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D295813D-E93D-4DE3-ABDE-B393A7BB8099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D295813D-E93D-4DE3-ABDE-B393A7BB8099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C23FF52-2B41-4CAE-9CF4-F4E724FAF4F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C23FF52-2B41-4CAE-9CF4-F4E724FAF4F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C23FF52-2B41-4CAE-9CF4-F4E724FAF4F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C23FF52-2B41-4CAE-9CF4-F4E724FAF4F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\RiderProjects\\CryptoExchange\\PriceFeed\\PriceFeed.csproj": {}
+    "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\PriceFeed\\PriceFeed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\RiderProjects\\CryptoExchange\\Common\\Common.csproj": {
+    "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\RiderProjects\\CryptoExchange\\Common\\Common.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\user\\RiderProjects\\CryptoExchange\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\RiderProjects\\CryptoExchange\\Common\\obj\\",
+        "projectPath": "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,36 +65,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\admin\\.dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\RiderProjects\\CryptoExchange\\PriceFeed\\PriceFeed.csproj": {
+    "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\PriceFeed\\PriceFeed.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\RiderProjects\\CryptoExchange\\PriceFeed\\PriceFeed.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\PriceFeed\\PriceFeed.csproj",
         "projectName": "PriceFeed",
-        "projectPath": "C:\\Users\\user\\RiderProjects\\CryptoExchange\\PriceFeed\\PriceFeed.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\RiderProjects\\CryptoExchange\\PriceFeed\\obj\\",
+        "projectPath": "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\PriceFeed\\PriceFeed.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\PriceFeed\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user\\RiderProjects\\CryptoExchange\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\user\\RiderProjects\\CryptoExchange\\Common\\Common.csproj"
+              "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\admin\\RiderProjects\\CryptoExchange\\Common\\Common.csproj"
               }
             }
           }
@@ -127,39 +123,39 @@
             },
             "FluentMigrator": {
               "target": "Package",
-              "version": "[7.1.0, )"
+              "version": "[7.2.0, )"
             },
             "FluentMigrator.Runner": {
               "target": "Package",
-              "version": "[7.1.0, )"
+              "version": "[7.2.0, )"
             },
             "FluentMigrator.Runner.Postgres": {
               "target": "Package",
-              "version": "[7.1.0, )"
+              "version": "[7.2.0, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[10.0.0-rc.2.25502.107, )"
+              "version": "[10.0.1, )"
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
-              "version": "[10.0.0-rc.2.25502.107, )"
+              "version": "[10.0.1, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[10.0.0-rc.2.25502.107, )"
+              "version": "[10.0.1, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[10.0.0-rc.2.25502.107, )"
+              "version": "[10.0.1, )"
             },
             "Npgsql": {
               "target": "Package",
-              "version": "[10.0.0-rc.1, )"
+              "version": "[10.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[10.1.0, )"
             }
           },
           "imports": [
@@ -181,7 +177,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\admin\\.dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -56,6 +56,30 @@
     volumes:
       - redis_data:/var/lib/redis/data/
     command: [ "redis-server", "--appendonly", "yes" ]
+    
+  postgres-wallet:
+    image: postgres
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=walletdb
+      - POSTGRES_HOST_AUTH_METHOD=md5
+      - POSTGRES_INITDB_ARGS=--auth=md5
+    volumes:
+      - pgdata:/var/lib/postgresql/data/wallet/
+  
+  pgbouncer-wallet:
+    image: edoburu/pgbouncer:latest
+    depends_on:
+      - postgres-wallet
+    environment:
+      - DB_HOST=postgres-wallet
+      - DB_PORT=5432
+      - DB_USER=user
+      - DB_PASSWORD=mypassword
+      - ADMIN_USERS=postgres,admin
+    ports:
+      - "17432:5432"
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.6.0
